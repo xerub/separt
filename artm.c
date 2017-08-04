@@ -52,11 +52,11 @@ print_bytes(const unsigned char *octet, size_t len, const char *fmt, ...)
 
 #ifdef DEBUG
 static const DERItemSpec SubARTItemSpecs[] = {
-    { 0 * sizeof(DERItem), ASN1_INTEGER,         0 },
-    { 1 * sizeof(DERItem), ASN1_OCTET_STRING,    0 },
-    { 2 * sizeof(DERItem), ASN1_OCTET_STRING,    0 },
-    { 3 * sizeof(DERItem), ASN1_OCTET_STRING,    0 },
-    { 4 * sizeof(DERItem), ASN1_CONSTR_SET,      0 },
+    { 0 * sizeof(DERItem), ASN1_INTEGER,         0 }, // counter
+    { 1 * sizeof(DERItem), ASN1_OCTET_STRING,    0 }, // manifest hash
+    { 2 * sizeof(DERItem), ASN1_OCTET_STRING,    0 }, // sleep hash
+    { 3 * sizeof(DERItem), ASN1_OCTET_STRING,    0 }, // restore nonce (snon)
+    { 4 * sizeof(DERItem), ASN1_CONSTR_SET,      0 }, // subcounters
 };
 
 static int
